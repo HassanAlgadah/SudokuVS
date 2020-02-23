@@ -1,6 +1,10 @@
 function start() {
+    // socket local connection
     let socket = io.connect('192.168.100.59:400');
+    // the id of the other player
     let opid;
+    let count = 1;
+    //connecting the two players
     socket.on('opid', function (data) {
         if (opid == null) {
             opid = data.opid;
@@ -9,7 +13,6 @@ function start() {
             })
         }
     });
-
     let gamebord = document.getElementById("gamebord");
     let gamebord2 = document.getElementById("gamebord2");
     let boxes = [81];
@@ -32,12 +35,12 @@ function start() {
         3, 4, 7, 5, 9, 8, 1, 6, 2,
         8, 5, 6, 1, 3, 2, 4, 7, 9];
 
+    //setting up the game
     for (let i = 0; i < 81; i++) {
         let bo = document.createElement('div');
-        let input = document.createElement('input');
         let enbo = document.createElement('div');
-        bo.className = 'box';
-        enbo.className = 'box';
+        let input = document.createElement('input');
+        setupGrid(bo,enbo,count);
         if (sudoku[i] != 0) {
             bo.innerHTML = '<span style="font-size:2.5em">' + sudoku[i] + "</span>";
             enbo.innerHTML = '<span style="font-size:2.5em">' + sudoku[i] + "</span>";
@@ -46,6 +49,8 @@ function start() {
         }
         gamebord.append(bo);
         gamebord2.append(enbo);
+
+        //sending data to the server
         input.addEventListener("blur", function () {
             console.log(opid);
             if (input.value == solv[i]) {
@@ -56,10 +61,33 @@ function start() {
             }
         });
         boxes[i] = enbo;
+        count++;
     }
+    //receiving data form the server
     socket.on('box', function (data) {
         boxes[data.boxnum].style.background = 'red';
     })
+}
+
+//setting up the griding
+function setupGrid(box1,box2,count){
+    box1.className = 'box';
+    box2.className = 'box';
+    if (count % 3 === 0) {
+        box1.style.borderWidth = "1px 1px 1px 4px";
+        box2.style.borderWidth = "1px 1px 1px 4px";
+    }
+    if(count % 9 === 0 ){
+        box1.style.borderWidth = "1px 1px 1px 1px";
+        box2.style.borderWidth = "1px 1px 1px 1px";
+    }
+    if(count>27&&count<37){
+        box1.style.borderTopWidth = "4px";
+        box2.style.borderTopWidth = "4px";
+    }else if(count>45 && count<55){
+        box1.style.borderBottomWidth = "4px";
+        box2.style.borderBottomWidth = "4px";
+    }
 }
 
 window.addEventListener('load', start, false);
