@@ -1,18 +1,22 @@
-function start() {
+function setupCon() {
     // socket local connection
     let socket = io.connect('192.168.100.59:400');
     // the id of the other player
     let opid;
-    let count = 1;
     //connecting the two players
     socket.on('opid', function (data) {
         if (opid == null) {
             opid = data.opid;
-            socket.emit('sendid',{
+            socket.emit('sendid', {
                 opid: opid
-            })
+            });
+            document.getElementById("waiting").hidden = true;
+            start(opid , socket);
         }
     });
+}
+function start(opid , socket) {
+    let count = 1;
     let gamebord = document.getElementById("gamebord");
     let gamebord2 = document.getElementById("gamebord2");
     let boxes = [81];
@@ -40,7 +44,7 @@ function start() {
         let bo = document.createElement('div');
         let enbo = document.createElement('div');
         let input = document.createElement('input');
-        setupGrid(bo,enbo,count);
+        setupGrid(bo, enbo, count);
         if (sudoku[i] != 0) {
             bo.innerHTML = '<span style="font-size:2.5em">' + sudoku[i] + "</span>";
             enbo.innerHTML = '<span style="font-size:2.5em">' + sudoku[i] + "</span>";
@@ -68,26 +72,25 @@ function start() {
         boxes[data.boxnum].style.background = 'red';
     })
 }
-
 //setting up the griding
-function setupGrid(box1,box2,count){
+function setupGrid(box1, box2, count) {
     box1.className = 'box';
     box2.className = 'box';
     if (count % 3 === 0) {
         box1.style.borderWidth = "1px 1px 1px 4px";
         box2.style.borderWidth = "1px 1px 1px 4px";
     }
-    if(count % 9 === 0 ){
+    if (count % 9 === 0) {
         box1.style.borderWidth = "1px 1px 1px 1px";
         box2.style.borderWidth = "1px 1px 1px 1px";
     }
-    if(count>27&&count<37){
+    if (count > 27 && count < 37) {
         box1.style.borderTopWidth = "4px";
         box2.style.borderTopWidth = "4px";
-    }else if(count>45 && count<55){
+    } else if (count > 45 && count < 55) {
         box1.style.borderBottomWidth = "4px";
         box2.style.borderBottomWidth = "4px";
     }
 }
 
-window.addEventListener('load', start, false);
+window.addEventListener('load', setupCon, false);
