@@ -13,13 +13,15 @@ io.on('connection',function (socket) {
     socket.broadcast.emit('opid',{
         opid: socket.id
     });
-    socket.on('box', function (data) {
-        socket.broadcast.to(data.opid).emit('box',data);
-        console.log(data.boxnum);
-    });
     socket.on('sendid', function (data) {
         socket.broadcast.to(data.opid).emit('opid',{
             opid: socket.id
         });
-    })
+    });
+
+    socket.on('box', function (data) {
+        socket.broadcast.to(data.opid).emit('box',data);
+        console.log(data.boxnum);
+    });
+
 });
