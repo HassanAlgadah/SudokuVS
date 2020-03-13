@@ -1,27 +1,20 @@
-var express = require('express');
-var socket = require('socket.io');
-var app = express();
-var server = app.listen(400,function () {
-    console.log("listening 400");
-});
+const express = require('express');
+const socket = require('socket.io');
+const app = express();
+const server = app.listen(400,()=> console.log("listening 400"));
 
 app.use(express.static('public'));
 
-var io = socket(server);
+let io = socket(server);
 
-io.on('connection',function (socket) {
+io.on('connection',(socket)=> {
     socket.broadcast.emit('opid',{
         opid: socket.id
     });
-    socket.on('sendid', function (data) {
-        socket.broadcast.to(data.opid).emit('opid',{
+    socket.on('sendid',(data)=> {
+        socket.to(data.opid).emit('opid',{
             opid: socket.id
         });
     });
-
-    socket.on('box', function (data) {
-        socket.broadcast.to(data.opid).emit('box',data);
-        console.log(data.boxnum);
-    });
-
+    socket.on('box', (data)=> socket.to(data.opid).emit('box',data));
 });

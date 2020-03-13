@@ -4,7 +4,7 @@ function setupCon() {
     // the id of the other player
     let opid;
     //connecting the two players
-    socket.on('opid', function (data) {
+    socket.on('opid', (data)=> {
         if (opid == null) {
             opid = data.opid;
             socket.emit('sendid', {
@@ -16,7 +16,6 @@ function setupCon() {
     });
 }
 function start(opid , socket) {
-    let count = 1;
     let gamebord = document.getElementById("gamebord");
     let gamebord2 = document.getElementById("gamebord2");
     let boxes = [81];
@@ -44,7 +43,7 @@ function start(opid , socket) {
         let bo = document.createElement('div');
         let enbo = document.createElement('div');
         let input = document.createElement('input');
-        setupGrid(bo, enbo, count);
+        setupGrid(bo, enbo, i+1);
         if (sudoku[i] != 0) {
             bo.innerHTML = '<span style="font-size:2.5em">' + sudoku[i] + "</span>";
             enbo.innerHTML = '<span style="font-size:2.5em">' + sudoku[i] + "</span>";
@@ -55,8 +54,7 @@ function start(opid , socket) {
         gamebord2.append(enbo);
 
         //sending data to the server
-        input.addEventListener("blur", function () {
-            console.log(opid);
+        input.addEventListener("blur",()=> {
             if (input.value == solv[i]) {
                 socket.emit('box', {
                     boxnum: i,
@@ -65,12 +63,9 @@ function start(opid , socket) {
             }
         });
         boxes[i] = enbo;
-        count++;
     }
     //receiving data form the server
-    socket.on('box', function (data) {
-        boxes[data.boxnum].style.background = 'red';
-    })
+    socket.on('box',(data)=> boxes[data.boxnum].style.background = 'red')
 }
 //setting up the griding
 function setupGrid(box1, box2, count) {
