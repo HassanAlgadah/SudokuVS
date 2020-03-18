@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41817a71-8bab-4b9a-bf38-f9dc145d45d1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Public/game.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +114,7 @@
       <workItem from="1584244921761" duration="2067000" />
       <workItem from="1584247359531" duration="215000" />
       <workItem from="1584428066170" duration="2367000" />
-      <workItem from="1584508895306" duration="837000" />
+      <workItem from="1584508895306" duration="1839000" />
     </task>
     <task id="LOCAL-00001" summary="fix game">
       <created>1582495735251</created>
@@ -183,9 +181,9 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="781" y="162" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1584247379403" />
-    <state x="976" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1584508896154">
+    <state x="976" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1584514995268">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="976" y="344" key="com.intellij.ide.util.TipDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1584508896154" />
+    <state x="976" y="344" key="com.intellij.ide.util.TipDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1584514995268" />
   </component>
 </project>
