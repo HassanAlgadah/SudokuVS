@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="41817a71-8bab-4b9a-bf38-f9dc145d45d1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-    </list>
+    <list default="true" id="41817a71-8bab-4b9a-bf38-f9dc145d45d1" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,6 +26,9 @@
     <expand />
     <select />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="last" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -39,21 +37,12 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>1</find>
-      <find>4</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>box1</replace>
-      <replace>2</replace>
-    </replaceStrings>
-  </component>
   <component name="Git.Settings">
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1Z9NT9wZKxyYd1nl1Bl99uwfut4" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -63,8 +52,8 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="12.16.1" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/views" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.14.1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -84,6 +73,32 @@
       <recent name="C:\Users\Hassan\Desktop\Personal projects\sudokuVS\views" />
       <recent name="C:\Users\Hassan\Desktop\Personal projects\sudokuVS\Public" />
     </key>
+  </component>
+  <component name="RunManager" selected="Node.js.server.js">
+    <configuration name="game.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/last/Public/game.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="index2.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/last/Public/index2.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/last/Public/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/index.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="server.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/server.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.server.js" />
+        <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="JavaScript Debug.index2.html" />
+        <item itemvalue="Node.js.index.js" />
+        <item itemvalue="JavaScript Debug.game.html" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -121,6 +136,11 @@
       <workItem from="1584508895306" duration="1839000" />
       <workItem from="1584514995748" duration="236000" />
       <workItem from="1584636985079" duration="460000" />
+      <workItem from="1584642882662" duration="3426000" />
+      <workItem from="1584649442092" duration="14000" />
+      <workItem from="1584649957612" duration="4980000" />
+      <workItem from="1584704555890" duration="14556000" />
+      <workItem from="1584787137499" duration="2124000" />
     </task>
     <task id="LOCAL-00001" summary="fix game">
       <created>1582495735251</created>
@@ -183,6 +203,26 @@
     <option name="LAST_COMMIT_MESSAGE" value="added waiting" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584654770018">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584654770018" />
+    <state width="1899" height="284" key="GridCell.Tab.0.bottom" timestamp="1584788135244">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="284" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584788135244" />
+    <state width="1899" height="284" key="GridCell.Tab.0.center" timestamp="1584788135244">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="284" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584788135244" />
+    <state width="1899" height="284" key="GridCell.Tab.0.left" timestamp="1584788135244">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="284" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584788135244" />
+    <state width="1899" height="284" key="GridCell.Tab.0.right" timestamp="1584788135244">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="284" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584788135244" />
     <state x="781" y="162" key="SettingsEditor" timestamp="1584247379403">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>

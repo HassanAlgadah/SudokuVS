@@ -21,16 +21,26 @@
         <i class="fas fa-bars"></i>
       </label> <div class="logo">  <img src="logo.png">  </div> </label>
       <ul>
+
         <li><a class="active" href="#">Home</a></li>
-        <li> <a href="Login.html">Sing in</a></li>
+       <!-- {{#if isAuthenticated}}   {{else}}   {{/if}}-->
+
+
+        <li> <a href="/Login">Sing in</a></li>
+
+
+
       </ul>
     </nav>
     <!-- navbar end-->
 
     <!-- home page-->
+<form action="/send" method="post">
     <div class="button">
-  <a href="game.html" class="btn"> Play Sudoku </a>
+      <input type="button">
+      <button>Play Sudoku </button>
 
+      </form>
 
 
 <!-- home page end-->

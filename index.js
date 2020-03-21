@@ -11,9 +11,6 @@ let io = socket(server);
 
 
 //test the database here !!!
-app.get('/login',(req,res)=>{
-    res.render("login")
-});
 
 
 
