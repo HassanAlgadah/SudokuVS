@@ -10,11 +10,13 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^3.0.6",
+    "cookie-parser": "^1.4.5",
     "ejs": "^2.6.2",
     "express": "^4.17.1",
     "express-flash": "0.0.2",
-    "express-session": "^1.16.2",
+    "express-session": "^1.17.0",
     "hbs": "^4.1.0",
+    "jsonwebtoken": "^8.5.1",
     "method-override": "^3.0.0",
     "mongodb": "^3.5.4",
     "mongoose": "^5.9.4",
@@ -24,7 +26,7 @@
     "swig": "^1.4.2"
   },
   "devDependencies": {
-    "dotenv": "^8.0.0",
+    "dotenv": "^8.2.0",
     "nodemon": "^2.0.2"
   }
 }

@@ -1,12 +1,8 @@
 if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config()
+    require('dotenv').config()
 }
-const router = require('express').Router()
-const hbs = require('hbs');
-
-const assert=require('assert')
+const socket = require('socket.io');
 const mongoose = require('mongoose')
-const mongo = require('mongodb');
 const express = require('express')
 const app = express()
 const bcrypt = require('bcrypt')
@@ -14,198 +10,148 @@ const passport = require('passport')
 const flash = require('express-flash')
 const session = require('express-session')
 const methodOverride = require('method-override')
-
+const jwt = require('jsonwebtoken')
 const initializePassport = require('./passport-config')
+var cookieParser = require('cookie-parser')
 
 
 const DB_URI = "mongodb://localhost:27017/datad" // mongodb://domain:port/database-name
 
-
-
+app.set('view-engine', 'hbs')
+app.use(express.static('public'));
+app.use(cookieParser())
 
 
 //Connect to MongoDB
-mongoose.connect(DB_URI, { useNewUrlParser: true } )
+mongoose.connect(DB_URI, {useNewUrlParser: true})
 
 
 //CONNECTION EVENTS
-mongoose.connection.once('connected', function() {
-  console.log("Database connected to " + DB_URI)
+mongoose.connection.once('connected', function () {
+    console.log("Database connected to " + DB_URI)
 })
-mongoose.connection.on('error', function(err) {
-  console.log("MongoDB connection error: " + err)
+mongoose.connection.on('error', function (err) {
+    console.log("MongoDB connection error: " + err)
 })
-mongoose.connection.once('disconnected', function() {
-  console.log("Database disconnected")
+mongoose.connection.once('disconnected', function () {
+    console.log("Database disconnected")
 })
 
-
-initializePassport(passport,function (email) {return users.find(function (user) {
-return user.email===email;
-    });},
-
+initializePassport(passport, function (email) {
+        return users.find(function (user) {
+            return user.email === email;
+        });
+        },
     function (id) {
-      return users.find(user => user.id === id);
-
-
+        return users.find(user => user.id === id);
     }
-    )
+)
+ function checkNotAuthenticated (req, res, next){
+     try {
+         let decoded = jwt.verify(req.cookies.token, 'ha');
+         mongoose.connect(DB_URI, async function (error, db) {
+             let user = await db.collection('users').findOne({email: decoded.email})
+             if (user) {
+                 req.user = user
+                 return next()
+             }
+             return res.redirect('/login')
+         })
+     }catch (e) {
+         return res.redirect('/login')
+     }
+}
 
-
-const users = []
-app.set('view-engine', 'hbs')
-app.use(express.static('public'));
-
-
-//to let the server know that we are using ejs
-
-
+let users = []
 
 //to get the input from the user .....body.name
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({extended: false}))
 app.use(flash())
 
 
 app.use(session({
-  secret: process.env.SESSION_SECRET,
-  resave: true, //save if nothing change
-  saveUninitialized: true //save with embty value
+    secret:'a cool secret',
+    resave: true, //save if nothing change
+    saveUninitialized: true //save with empty value
 }))
 app.use(passport.initialize())
 app.use(passport.session())
 app.use(methodOverride('_method'))
-// app.use(function (req,res,next) {
-//   res.locals.isAuthenticated =req.isAuthenticated();
-//   next();
-//
-// })
 
 
-
-app.get('/Login', checkNotAuthenticated, (req, res) => {
-  mongoose.connect(DB_URI,function (error,db) {
-
-
-    var getdata= db.collection('users').find();
-    getdata.forEach(function (doc,err) {
-      users.push(doc);
-
-
-    });
-
-  });
-  console.log(users);
-
-  res.render('login.hbs')
+app.get('/Login', (req, res) => {
+        res.render('login.hbs')
 })
 
+app.post('/Login',async (req,res)=> {
+    mongoose.connect(DB_URI, async function (error, db) {
+        let user = await db.collection('users').findOne({email: req.body.email});
+        if(user){
+            if(await bcrypt.compare(req.body.password,user.password)){
+                let token = jwt.sign({ email: user.email},'ha')
+                res.cookie('token',token)
+                return res.redirect('/index2.html')
+            }
+        }
+        res.redirect('/login')
+    })
+})
 
-// app.get('index.html', checkAuthenticated, (req, res) => {
-//   res.render('index.html', { name: req.user.name })
-// })
+app.get('/game',checkNotAuthenticated,(req,res)=>{
+    res.render('game.hbs')
+})
 
-
-//update;;;;;;;;;;;
-// app.post('/login',function (req,res,next) {
-//
-//   var  newuser={
-//     id: Date.now().toString(),
-//     name: "nawafhapp",
-//     email: req.body.email,
-//   };
-//   var email=req.body.email;
-//   mongoose.connect(DB_URI,function (error,db) {
-//     db.collection('users').updatetOne({"email":email},{$set:newuser.name},function (err,result) {
-//
-//       console.log("user is inserted ");
-//
-//
-//     });
-//   })
-//
-// })
-
-
-app.post('/Login', checkNotAuthenticated, passport.authenticate('local', {
-
-  //if
-  successRedirect: 'index2.html',
-  ///register.html
-  failureRedirect: '/Login',
-  failureFlash: true
-}))
-
-
-app.post("/send",function (req,res) {
-  if (req.isAuthenticated()) {
-    res.redirect('/game.html')
-     }
-  else{
-    res.redirect('/login')
-  }
-
+app.get('/player' ,checkNotAuthenticated,(req,res)=> {
+    console.log(req.user)
+    res.send(req.user)
 })
 
 app.get('/Logout', (req, res) => {
-  req.logout();
-  req.session.destroy();
-
-  res.redirect('index.html');
+    res.clearCookie('token');
+    res.redirect('/login')
 })
 
 
-app.get('/register.html', checkNotAuthenticated, (req, res) => {
-
-  res.render('register.html')
+app.get('/register.html', (req, res) => {
+    res.render('register.html')
 })
 
-app.post('/register.html', checkNotAuthenticated, async (req, res,next) => {
-  try {
-
-    const hashedPassword = await bcrypt.hash(req.body.password, 10)
-    var  newuser={
-      id: Date.now().toString(),
-      name: req.body.name,
-      email: req.body.email,
-      password: hashedPassword,
-      point : 0
-    };
-    mongoose.connect(DB_URI,function (error,db) {
-      db.collection('users').insertOne(newuser,function (err,result) {
-
-        console.log("user is inserted ");
-
-
-      });
-
-
-    })
-    res.redirect('/Login')
-
-  } catch {
-    res.redirect('/register')
-  }
-
+app.post('/register.html', async (req, res, next) => {
+    try {
+        const hashedPassword = await bcrypt.hash(req.body.password, 10)
+        var newuser = {
+            id: Date.now().toString(),
+            name: req.body.name,
+            email: req.body.email,
+            password: hashedPassword,
+            level:0,
+            points: 0,
+        };
+        mongoose.connect(DB_URI, function (error, db) {
+            db.collection('users').insertOne(newuser, function (err, result) {
+                console.log("user is inserted ");
+            });
+        })
+        res.redirect('/Login')
+    } catch {
+        res.redirect('/register')
+    }
 })
 
-// app.delete('/logout', (req, res) => {
-//   req.logOut()
-//   res.redirect('/login')
-// })
 
-function checkAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) {
-    return next()
-  }
+const server = app.listen(4000,()=> console.log("listening 4000"));
 
-  res.redirect('/login')
-}
+let io = socket(server);
 
-function checkNotAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) {
-    return res.redirect('/')
-  }
-  next()
-}
-console.log("port 8080");
-app.listen(8080)
+io.on('connection',(socket)=> {
+    socket.broadcast.emit('opid',{
+        opid: socket.id
+    });
+    socket.on('sendid',(data)=> {
+        socket.to(data.opid).emit('opid',{
+            opid: socket.id
+        });
+    });
+    socket.on('box', (data)=> socket.to(data.opid).emit('box',data));
+});
+

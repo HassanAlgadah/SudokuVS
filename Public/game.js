@@ -1,6 +1,10 @@
-function setupCon() {
+async function  setupCon() {
+    const data = await fetch('http://localhost:4000/player')
+    const respond = await data.json()
+    console.log(respond)
+    console.log("dasodjkasiopdj")
     // socket local connection
-    let socket = io.connect('192.168.100.59:400');
+    let socket = io.connect('localhost:4000');
     // the id of the other player
     let opid;
     //connecting the two players

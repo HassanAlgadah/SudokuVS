@@ -5,14 +5,9 @@ const app = express();
 const server = app.listen(400,()=> console.log("listening 400"));
 
 app.set('view engine','hbs')
-// app.use(express.static('public'));
+app.use(express.static('public'));
 
 let io = socket(server);
-
-
-//test the database here !!!
-
-
 
 io.on('connection',(socket)=> {
     socket.broadcast.emit('opid',{
