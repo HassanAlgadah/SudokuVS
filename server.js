@@ -13,14 +13,15 @@ const methodOverride = require('method-override')
 const jwt = require('jsonwebtoken')
 const initializePassport = require('./passport-config')
 var cookieParser = require('cookie-parser')
+const path = require('path')
 
 
 const DB_URI = "mongodb://localhost:27017/datad" // mongodb://domain:port/database-name
+const directoryPath= path.join(__dirname, "Public")
 
 app.set('view-engine', 'hbs')
-app.use(express.static('public'));
+app.use(express.static(directoryPath));
 app.use(cookieParser())
-
 
 //Connect to MongoDB
 mongoose.connect(DB_URI, {useNewUrlParser: true})
@@ -102,7 +103,6 @@ app.get('/game',checkNotAuthenticated,(req,res)=>{
 })
 
 app.get('/player' ,checkNotAuthenticated,(req,res)=> {
-    console.log(req.user)
     res.send(req.user)
 })
 
