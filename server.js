@@ -16,9 +16,12 @@ var cookieParser = require('cookie-parser')
 const path = require('path')
 
 const DB_URI = "mongodb+srv://hassan:123qweasdzxc@project-70hq6.mongodb.net/datad?retryWrites=true&w=majority" // mongodb://domain:port/database-name
+
 const directoryPath= path.join(__dirname, "Public")
+const directoryviews= path.join(__dirname, "views")
 
 app.set('view-engine', 'hbs')
+app.set('views',directoryviews)
 app.use(express.static(directoryPath));
 app.use(cookieParser())
 
