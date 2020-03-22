@@ -82,11 +82,11 @@ app.use(passport.session())
 app.use(methodOverride('_method'))
 
 
-app.get('/Login', (req, res) => {
+app.get('/login', (req, res) => {
         res.render('login.hbs')
 })
 
-app.post('/Login',async (req,res)=> {
+app.post('/login',async (req,res)=> {
     mongoose.connect(DB_URI, async function (error, db) {
         let user = await db.collection('users').findOne({email: req.body.email});
         if(user){
@@ -134,7 +134,7 @@ app.post('/register.html', async (req, res, next) => {
                 console.log("user is inserted ");
             });
         })
-        res.redirect('/Login')
+        res.redirect('/login')
     } catch {
         res.redirect('/register')
     }
