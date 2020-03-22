@@ -2,9 +2,8 @@ async function  setupCon() {
     const data = await fetch('/player')
     const respond = await data.json()
     console.log(respond)
-    console.log("dasodjkasiopdj")
     // socket local connection
-    let socket = io.connect('localhost:4000');
+    let socket = io.connect('https://sudokuvss.herokuapp.com/');
     // the id of the other player
     let opid;
     //connecting the two players
