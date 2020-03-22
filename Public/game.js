@@ -1,5 +1,5 @@
 async function  setupCon() {
-    const data = await fetch('http://localhost:4000/player')
+    const data = await fetch('/player')
     const respond = await data.json()
     console.log(respond)
     console.log("dasodjkasiopdj")

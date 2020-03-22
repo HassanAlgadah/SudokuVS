@@ -15,8 +15,7 @@ const initializePassport = require('./passport-config')
 var cookieParser = require('cookie-parser')
 const path = require('path')
 
-
-const DB_URI = "mongodb://localhost:27017/datad" // mongodb://domain:port/database-name
+const DB_URI = "mongodb+srv://hassan:123qweasdzxc@project-70hq6.mongodb.net/datad?retryWrites=true&w=majority" // mongodb://domain:port/database-name
 const directoryPath= path.join(__dirname, "Public")
 
 app.set('view-engine', 'hbs')
