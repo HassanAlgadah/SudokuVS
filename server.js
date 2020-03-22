@@ -138,8 +138,8 @@ app.post('/register.html', async (req, res, next) => {
     }
 })
 
-
-const server = app.listen(4000,()=> console.log("listening 4000"));
+let port = process.env.PORT || 4000
+const server = app.listen(port,()=> console.log("listening 4000"));
 
 let io = socket(server);
 
