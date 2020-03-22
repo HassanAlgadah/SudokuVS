@@ -92,4 +92,7 @@ function setupGrid(box1, box2, count) {
     }
 }
 
+const pickGame = ()=>{
+    let game
+}
 window.addEventListener('load', setupCon, false);
