@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Start</title>
-    <link rel="icon" href="logo.png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/logo.png">
+    <link rel="stylesheet" href="css/style1.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <style>
         .box{
@@ -28,6 +28,13 @@
             height: 366px;
             border-style: solid;
             margin-right: 100px;
+        }
+        .player{
+            position: absolute;
+            width: 25%;
+            height:5%;
+            margin-top: 2%;
+            font-family: Arial, Helvetica, sans-serif;
         }
         input{
             border:none;
@@ -57,7 +64,7 @@
             100% { transform: rotate(360deg); }
         }
     </style>
-    <script src="game.js"></script>
+    <script src="js/game.js"></script>
     <script src="socket.io/socket.io.js"></script>
 
 </head>
@@ -66,20 +73,28 @@
     <input type="checkbox" id="check">
     <label for="check" class="checkbtn">
         <i class="fas fa-bars"></i>
-    </label> <div class="logo">  <img src="logo.png">  </div> </label>
+    </label> <div class="logo">  <img src="images/logo.png">  </div> </label>
     <ul>
-        <li><a class="active" href="index2.html">Home</a></li>
+        <li><a class="active" href="/">Home</a></li>
     </ul>
 </nav>
+<div class="player" style="margin-left:6%">
+    <p id="name" style="margin-left:30% ; font-size: 30px ">{{name}}</p>
+    <p style="margin-top: 2% ; font-size: 20px">level: <span id="level" style="margin-right: 50%">{{level}}</span> points: <span id="points">{{points}}</span> </p>
+</div>
+
+<div id="eplayer" class="player" style=" margin-left:73% ; visibility: hidden">
+    <p id="ename" style="margin-left:30% ; font-size: 30px ">hassan</p>
+    <p style="margin-top: 2% ; font-size: 20px">level: <span id="elevel" style="margin-right: 50%">1</span> points: <span id="epoints">2</span> </p>
+</div>
+
+
 <div style="margin: 100px"></div>
 <div id="gamebord" class="border"></div>
 <div id="gamebord2" class="enemy"></div>
 <div id="waiting"><span>Waiting for another player to join the game</span> <br>
     <div class="loader"></div></div>
 
-<div>
-    <p>name</p>
-    <p>level</p>
-</div>
+
 </body>
 </html>

@@ -58,10 +58,9 @@ initializePassport(passport, function (email) {
                  req.user = user
                  return next()
              }
-             return res.redirect('/login')
          })
      }catch (e) {
-         return res.redirect('/login')
+         return next()
      }
 }
 
@@ -82,9 +81,33 @@ app.use(passport.session())
 app.use(methodOverride('_method'))
 
 
-app.get('/login', (req, res) => {
-        res.render('login.hbs')
+app.get('',checkNotAuthenticated,(req,res)=>{
+    if(req.user) {
+        res.render('index2.hbs', {
+            name: req.user.name,
+            level: req.user.level,
+            points: req.user.points
+        })
+    }else{
+        res.render('index.hbs')
+    }
 })
+
+
+app.get('/login',checkNotAuthenticated, (req, res) => {
+    if(req.user){
+        res.redirect('/')
+    }
+    if(req.query.error){
+        console.log("sdsdsd")
+        res.render('login.hbs',{
+            error:'wrong email or password'
+        })
+    }else {
+        res.render('login.hbs')
+    }
+})
+
 
 app.post('/login',async (req,res)=> {
     mongoose.connect(DB_URI, async function (error, db) {
@@ -93,15 +116,22 @@ app.post('/login',async (req,res)=> {
             if(await bcrypt.compare(req.body.password,user.password)){
                 let token = jwt.sign({ email: user.email},'ha')
                 res.cookie('token',token)
-                return res.redirect('/index2.html')
+                return res.redirect('/')
             }
         }
-        res.redirect('/login')
+        res.redirect('/login?error=nouser')
     })
 })
 
 app.get('/game',checkNotAuthenticated,(req,res)=>{
-    res.render('game.hbs')
+    if(!req.user){
+        return res.redirect('/login')
+    }
+    res.render('game.hbs',{
+        name:req.user.name,
+        level:req.user.level,
+        points:req.user.points
+    })
 })
 
 app.get('/player' ,checkNotAuthenticated,(req,res)=> {
@@ -146,14 +176,19 @@ const server = app.listen(port,()=> console.log("listening 4000"));
 let io = socket(server);
 
 io.on('connection',(socket)=> {
+    console.log("dsddds")
     socket.broadcast.emit('opid',{
         opid: socket.id
     });
     socket.on('sendid',(data)=> {
         socket.to(data.opid).emit('opid',{
-            opid: socket.id
+            opid: socket.id,
+            name:data.name,
+            level:data.level,
+            points:data.points
         });
     });
     socket.on('box', (data)=> socket.to(data.opid).emit('box',data));
+    socket.on('info', (data)=> socket.to(data.opid).emit('info',data));
 });
 

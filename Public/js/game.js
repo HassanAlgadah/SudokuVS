@@ -1,27 +1,43 @@
-async function  setupCon() {
-    const data = await fetch('/player')
-    const respond = await data.json()
-    console.log(respond)
+async function setupCon() {
+    // const data = await fetch('/player')
+    // const respond = await data.json()
     // socket local connection
     let socket = io.connect('https://sudokuvss.herokuapp.com/');
+    // let socket = io.connect('http://localhost:4000');
     // the id of the other player
     let opid;
     //connecting the two players
     socket.on('opid', (data)=> {
         if (opid == null) {
-            opid = data.opid;
+            opid = data.opid
             socket.emit('sendid', {
-                opid: opid
+                opid: opid,
             });
-            document.getElementById("waiting").hidden = true;
-            start(opid , socket);
+            socket.emit('info', {
+                opid: opid,
+                name:document.getElementById('name').innerText,
+                level:document.getElementById('level').innerText,
+                points:document.getElementById('points').innerText,
+            })
         }
-    });
+    })
+    socket.on('info',(data)=> {
+        console.log(data.level)
+        document.getElementById('ename').innerText = data.name
+        document.getElementById('elevel').innerText = data.level
+        document.getElementById('epoints').innerText = data.points
+        document.getElementById("waiting").hidden = true;
+        document.getElementById("eplayer").style.visibility = 'visible';
+        start(opid , socket);
+    })
+
 }
 function start(opid , socket) {
     let gamebord = document.getElementById("gamebord");
     let gamebord2 = document.getElementById("gamebord2");
     let boxes = [81];
+    let wincount = 81;
+    let rightcount = 0;
     let sudoku = [6, 8, 0, 0, 0, 0, 0, 0, 0,
         4, 0, 3, 0, 0, 5, 6, 0, 0,
         9, 7, 0, 6, 0, 3, 0, 5, 0,
@@ -48,6 +64,8 @@ function start(opid , socket) {
         let input = document.createElement('input');
         setupGrid(bo, enbo, i+1);
         if (sudoku[i] != 0) {
+            //counter
+            wincount--
             bo.innerHTML = '<span style="font-size:2.5em">' + sudoku[i] + "</span>";
             enbo.innerHTML = '<span style="font-size:2.5em">' + sudoku[i] + "</span>";
         } else {
@@ -59,6 +77,10 @@ function start(opid , socket) {
         //sending data to the server
         input.addEventListener("blur",()=> {
             if (input.value == solv[i]) {
+                rightcount++
+                if(rightcount === wincount){
+                    return win()
+                }
                 socket.emit('box', {
                     boxnum: i,
                     opid: opid
@@ -91,7 +113,7 @@ function setupGrid(box1, box2, count) {
     }
 }
 
-const pickGame = ()=>{
-    let game
+const win = ()=>{
+
 }
 window.addEventListener('load', setupCon, false);

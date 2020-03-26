@@ -2,8 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41817a71-8bab-4b9a-bf38-f9dc145d45d1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Public/images/play.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Public/images/profile.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/index.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/Public/game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Public/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/Public/js/game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Public/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/index2.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Public/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/Public/images/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Public/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/Public/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Public/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Public/sudoku.png" beforeDir="false" afterPath="$PROJECT_DIR$/Public/images/sudoku.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/game.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/game.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/login.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/login.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +69,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.16.1" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Public" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -71,13 +83,16 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2018.3.5\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Hassan\Desktop\Personal projects\sudokuVS\Public\images" />
+      <recent name="C:\Users\Hassan\Desktop\Personal projects\sudokuVS\Public\css" />
+      <recent name="C:\Users\Hassan\Desktop\Personal projects\sudokuVS\Public\js" />
       <recent name="C:\Users\Hassan\Desktop\Personal projects\sudokuVS\views" />
       <recent name="C:\Users\Hassan\Desktop\Personal projects\sudokuVS\Public" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Hassan\Desktop\Personal projects\sudokuVS\views" />
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Hassan\Desktop\Personal projects\sudokuVS\Public" />
+      <recent name="C:\Users\Hassan\Desktop\Personal projects\sudokuVS\views" />
     </key>
   </component>
   <component name="RunManager" selected="Node.js.server.js">
@@ -150,7 +165,12 @@
       <workItem from="1584813088146" duration="1734000" />
       <workItem from="1584818410103" duration="191000" />
       <workItem from="1584875126055" duration="31186000" />
-      <workItem from="1584907525879" duration="278000" />
+      <workItem from="1584907525879" duration="826000" />
+      <workItem from="1584910996233" duration="345000" />
+      <workItem from="1584912551663" duration="87000" />
+      <workItem from="1584989233459" duration="2347000" />
+      <workItem from="1585161842100" duration="10671000" />
+      <workItem from="1585182432605" duration="3073000" />
     </task>
     <task id="LOCAL-00001" summary="fix game">
       <created>1582495735251</created>
@@ -213,11 +233,11 @@
     <option name="LAST_COMMIT_MESSAGE" value="added waiting" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="920" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584902214328">
+    <state x="920" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585182448272">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584654770018" />
-    <state x="920" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1584902214328" />
+    <state x="920" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1585182448272" />
     <state width="1340" height="168" key="GridCell.Tab.0.bottom" timestamp="1584907501673">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
@@ -242,10 +262,10 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="781" y="162" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1584875511409" />
-    <state x="976" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1584907526381">
+    <state x="976" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1585182432486">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="976" y="344" key="com.intellij.ide.util.TipDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1584907526381" />
+    <state x="976" y="344" key="com.intellij.ide.util.TipDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1585182432486" />
     <state x="936" y="240" key="run.anything.popup" timestamp="1584891369747">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
