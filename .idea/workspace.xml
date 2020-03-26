@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41817a71-8bab-4b9a-bf38-f9dc145d45d1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Public/images/play.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Public/images/profile.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/index.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/Public/js/game.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/index2.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/Public/images/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/Public/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/sudoku.png" beforeDir="false" afterPath="$PROJECT_DIR$/Public/images/sudoku.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/game.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/game.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/login.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/login.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,6 +158,7 @@
       <workItem from="1584989233459" duration="2347000" />
       <workItem from="1585161842100" duration="10671000" />
       <workItem from="1585182432605" duration="3073000" />
+      <workItem from="1585234789413" duration="759000" />
     </task>
     <task id="LOCAL-00001" summary="fix game">
       <created>1582495735251</created>
@@ -238,34 +226,34 @@
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584654770018" />
     <state x="920" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1585182448272" />
-    <state width="1340" height="168" key="GridCell.Tab.0.bottom" timestamp="1584907501673">
+    <state width="1325" height="168" key="GridCell.Tab.0.bottom" timestamp="1585235478877">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="1899" height="284" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584788135244" />
-    <state width="1340" height="168" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1584907501673" />
-    <state width="1340" height="168" key="GridCell.Tab.0.center" timestamp="1584907501672">
+    <state width="1325" height="168" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1585235478877" />
+    <state width="1325" height="168" key="GridCell.Tab.0.center" timestamp="1585235478877">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="1899" height="284" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584788135244" />
-    <state width="1340" height="168" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1584907501672" />
-    <state width="1340" height="168" key="GridCell.Tab.0.left" timestamp="1584907501672">
+    <state width="1325" height="168" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1585235478877" />
+    <state width="1325" height="168" key="GridCell.Tab.0.left" timestamp="1585235478876">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="1899" height="284" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584788135244" />
-    <state width="1340" height="168" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1584907501672" />
-    <state width="1340" height="168" key="GridCell.Tab.0.right" timestamp="1584907501673">
+    <state width="1325" height="168" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1585235478876" />
+    <state width="1325" height="168" key="GridCell.Tab.0.right" timestamp="1585235478877">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="1899" height="284" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584788135244" />
-    <state width="1340" height="168" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1584907501673" />
+    <state width="1325" height="168" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1585235478877" />
     <state x="781" y="162" key="SettingsEditor" timestamp="1584875511409">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="781" y="162" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1584875511409" />
-    <state x="976" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1585182432486">
+    <state x="976" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1585234791703">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="976" y="344" key="com.intellij.ide.util.TipDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1585182432486" />
+    <state x="976" y="344" key="com.intellij.ide.util.TipDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1585234791703" />
     <state x="936" y="240" key="run.anything.popup" timestamp="1584891369747">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
