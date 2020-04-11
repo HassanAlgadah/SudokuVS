@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41817a71-8bab-4b9a-bf38-f9dc145d45d1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Public/js/game.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Public/js/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/Public/js/game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/game.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/game.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +60,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.16.1" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Public" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Public/js" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -70,16 +74,17 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2018.3.5\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Hassan\Desktop\Personal projects\sudokuVS\Public\js" />
+      <recent name="C:\Users\Hassan\Desktop\Personal projects\sudokuVS\Public" />
+      <recent name="C:\Users\Hassan\Desktop\Personal projects\sudokuVS\views" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Hassan\Desktop\Personal projects\sudokuVS\Public\images" />
       <recent name="C:\Users\Hassan\Desktop\Personal projects\sudokuVS\Public\css" />
       <recent name="C:\Users\Hassan\Desktop\Personal projects\sudokuVS\Public\js" />
       <recent name="C:\Users\Hassan\Desktop\Personal projects\sudokuVS\views" />
       <recent name="C:\Users\Hassan\Desktop\Personal projects\sudokuVS\Public" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Hassan\Desktop\Personal projects\sudokuVS\Public" />
-      <recent name="C:\Users\Hassan\Desktop\Personal projects\sudokuVS\views" />
     </key>
   </component>
   <component name="RunManager" selected="Node.js.server.js">
@@ -158,7 +163,11 @@
       <workItem from="1584989233459" duration="2347000" />
       <workItem from="1585161842100" duration="10671000" />
       <workItem from="1585182432605" duration="3073000" />
-      <workItem from="1585234789413" duration="759000" />
+      <workItem from="1585234789413" duration="928000" />
+      <workItem from="1585247002989" duration="100000" />
+      <workItem from="1585335367446" duration="14000" />
+      <workItem from="1585351671053" duration="672000" />
+      <workItem from="1586559479182" duration="7154000" />
     </task>
     <task id="LOCAL-00001" summary="fix game">
       <created>1582495735251</created>
@@ -221,39 +230,43 @@
     <option name="LAST_COMMIT_MESSAGE" value="added waiting" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1028" y="330" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586559760951">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1028" y="330" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1040@0.0.2560.1040" timestamp="1586559760951" />
     <state x="920" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585182448272">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584654770018" />
     <state x="920" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1585182448272" />
-    <state width="1325" height="168" key="GridCell.Tab.0.bottom" timestamp="1585235478877">
+    <state width="1325" height="168" key="GridCell.Tab.0.bottom" timestamp="1585235717213">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="1899" height="284" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584788135244" />
-    <state width="1325" height="168" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1585235478877" />
-    <state width="1325" height="168" key="GridCell.Tab.0.center" timestamp="1585235478877">
+    <state width="1325" height="168" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1585235717213" />
+    <state width="1325" height="168" key="GridCell.Tab.0.center" timestamp="1585235717213">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="1899" height="284" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584788135244" />
-    <state width="1325" height="168" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1585235478877" />
-    <state width="1325" height="168" key="GridCell.Tab.0.left" timestamp="1585235478876">
+    <state width="1325" height="168" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1585235717213" />
+    <state width="1325" height="168" key="GridCell.Tab.0.left" timestamp="1585235717213">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="1899" height="284" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584788135244" />
-    <state width="1325" height="168" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1585235478876" />
-    <state width="1325" height="168" key="GridCell.Tab.0.right" timestamp="1585235478877">
+    <state width="1325" height="168" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1585235717213" />
+    <state width="1325" height="168" key="GridCell.Tab.0.right" timestamp="1585235717213">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="1899" height="284" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584788135244" />
-    <state width="1325" height="168" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1585235478877" />
+    <state width="1325" height="168" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1585235717213" />
     <state x="781" y="162" key="SettingsEditor" timestamp="1584875511409">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="781" y="162" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1584875511409" />
-    <state x="976" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1585234791703">
+    <state x="976" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1586559478516">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="976" y="344" key="com.intellij.ide.util.TipDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1585234791703" />
+    <state x="976" y="344" key="com.intellij.ide.util.TipDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1586559478516" />
     <state x="936" y="240" key="run.anything.popup" timestamp="1584891369747">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>

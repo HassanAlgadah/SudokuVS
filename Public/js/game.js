@@ -2,8 +2,8 @@ async function setupCon() {
     // const data = await fetch('/player')
     // const respond = await data.json()
     // socket local connection
-    let socket = io.connect('https://sudokuvss.herokuapp.com/');
-    // let socket = io.connect('http://localhost:4000');
+    // let socket = io.connect('https://sudokuvss.herokuapp.com/');
+    let socket = io.connect('http://localhost:4000');
     // the id of the other player
     let opid;
     //connecting the two players
@@ -78,8 +78,11 @@ function start(opid , socket) {
         input.addEventListener("blur",()=> {
             if (input.value == solv[i]) {
                 rightcount++
-                if(rightcount === wincount){
-                    return win()
+                if(rightcount === (wincount+1)){
+                    socket.emit('win', {
+                        opid: opid
+                    })
+                     win(true)
                 }
                 socket.emit('box', {
                     boxnum: i,
@@ -91,6 +94,7 @@ function start(opid , socket) {
     }
     //receiving data form the server
     socket.on('box',(data)=> boxes[data.boxnum].style.background = 'red')
+    socket.on('win',(data)=> win(false))
 }
 //setting up the griding
 function setupGrid(box1, box2, count) {
@@ -113,7 +117,22 @@ function setupGrid(box1, box2, count) {
     }
 }
 
-const win = ()=>{
-
+async function win (res) {
+    const options = {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: {
+            user: ""
+        }
+    }
+    if (res) {
+        document.getElementById("win").style.visibility = "visible"
+        await fetch('/win', options)
+    } else {
+        document.getElementById("lost").style.visibility = "visible"
+        await fetch('/lost', options)
+    }
 }
 window.addEventListener('load', setupCon, false);

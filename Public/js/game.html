@@ -52,11 +52,6 @@
         }
         #win{
             position: absolute;
-            left: 30%;
-            bottom: 20%;
-        }
-        #lost{
-            position: absolute;
             right: 40%;
             bottom: 20%;
         }
@@ -78,7 +73,7 @@
     <script src="socket.io/socket.io.js"></script>
 
 </head>
-<body>
+<body style="background-color: darkgreen">
 <nav>
     <input type="checkbox" id="check">
     <label for="check" class="checkbtn">
@@ -105,19 +100,10 @@
 <div id="waiting"><span>Waiting for another player to join the game</span> <br>
     <div class="loader"></div></div>
 
-
 <div id="win" style="visibility: hidden">
-    <img src="images/win.png" style="width: 600px;height: 300px">
     <p style="font-size: 100px">VICTORY!</p>
-    <p style="font-size: 50px">you won <span style="color: green">500</span> points</p>
+    <p style="font-size: 50px">you won <span style="color: red">500</span> points</p>
 </div>
-
-<div id="lost" style="visibility: hidden">
-    <img src="images/lost.PNG" style="width: 300px;height: 100px;margin-bottom: 100px">
-    <p style="font-size: 100px; color: red">DEFEAT !</p>
-    <p style="font-size: 50px">you lost <span style="color: red">500</span> points</p>
-</div>
-
 
 </body>
 </html>

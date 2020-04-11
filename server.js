@@ -148,6 +148,24 @@ app.get('/register.html', (req, res) => {
     res.render('register.html')
 })
 
+app.post('/win',checkNotAuthenticated,(req,res)=>{
+  console.log(req.user)
+    let points = req.user.points+500
+    mongoose.connect(DB_URI, async function (error, db) {
+        await db.collection('users').findOneAndUpdate({email: req.user.email}, {$set:{points:points}})
+    })
+})
+app.post('/lost',checkNotAuthenticated,(req,res)=>{
+    console.log(req.user)
+    let points = 0
+    if(req.user.points>500) {
+        points = req.user.points - 500
+    }
+        mongoose.connect(DB_URI, async function (error, db) {
+        await db.collection('users').findOneAndUpdate({email: req.user.email}, {$set:{points:points}})
+    })
+})
+
 app.post('/register.html', async (req, res, next) => {
     try {
         const hashedPassword = await bcrypt.hash(req.body.password, 10)
@@ -176,7 +194,6 @@ const server = app.listen(port,()=> console.log("listening 4000"));
 let io = socket(server);
 
 io.on('connection',(socket)=> {
-    console.log("dsddds")
     socket.broadcast.emit('opid',{
         opid: socket.id
     });
@@ -189,6 +206,7 @@ io.on('connection',(socket)=> {
         });
     });
     socket.on('box', (data)=> socket.to(data.opid).emit('box',data));
+    socket.on('win', (data)=> socket.to(data.opid).emit('win',data));
     socket.on('info', (data)=> socket.to(data.opid).emit('info',data));
 });
 
