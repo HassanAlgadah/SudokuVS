@@ -2,8 +2,8 @@ async function setupCon() {
     // const data = await fetch('/player')
     // const respond = await data.json()
     // socket local connection
-    // let socket = io.connect('https://sudokuvss.herokuapp.com/');
-    let socket = io.connect('http://localhost:4000');
+    let socket = io.connect('https://sudokuvss.herokuapp.com/');
+    // let socket = io.connect('http://localhost:4000');
     // the id of the other player
     let opid;
     //connecting the two players
@@ -33,11 +33,24 @@ async function setupCon() {
 
 }
 function start(opid , socket) {
-    let gamebord = document.getElementById("gamebord");
-    let gamebord2 = document.getElementById("gamebord2");
-    let boxes = [81];
+    let check = 6;
     let wincount = 81;
     let rightcount = 0;
+    let boxes = [81];
+    let gamebord = document.getElementById("gamebord");
+    let gamebord2 = document.getElementById("gamebord2");
+    let checkbtn = document.getElementById('checkwin');
+    let checknum = document.getElementById("checknum")
+    let answer = document.getElementById("answer")
+    answer.style.visibility = 'visible'
+    checknum.innerText= '5'
+
+    checkbtn.addEventListener('click',()=>{
+        check--
+        if(check >= 1) {
+            checknum.innerText = (check-1).toString()
+        }
+    })
     let sudoku = [6, 8, 0, 0, 0, 0, 0, 0, 0,
         4, 0, 3, 0, 0, 5, 6, 0, 0,
         9, 7, 0, 6, 0, 3, 0, 5, 0,
@@ -78,6 +91,12 @@ function start(opid , socket) {
         input.addEventListener("blur",()=> {
             if (input.value == solv[i]) {
                 rightcount++
+                checkbtn.addEventListener('click',()=> {
+                    if (check>0) {
+                        bo.style.backgroundColor = 'green'
+                    }
+                })
+                //player won the game
                 if(rightcount === (wincount+1)){
                     socket.emit('win', {
                         opid: opid
@@ -91,9 +110,11 @@ function start(opid , socket) {
             }
         });
         boxes[i] = enbo;
+
     }
     //receiving data form the server
     socket.on('box',(data)=> boxes[data.boxnum].style.background = 'red')
+    //player lost the game
     socket.on('win',(data)=> win(false))
 }
 //setting up the griding
@@ -127,6 +148,7 @@ async function win (res) {
             user: ""
         }
     }
+    document.getElementById("answer").style.visibility="hidden"
     if (res) {
         document.getElementById("win").style.visibility = "visible"
         await fetch('/win', options)

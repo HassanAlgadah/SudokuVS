@@ -45,6 +45,27 @@
             font-size:2.5em ;
             text-align: center;
         }
+        .answer{
+            margin: 20px ;
+            font-family: times, Times New Roman, times-roman, georgia, serif;
+            font-size: 28px;
+            line-height: 40px;
+            letter-spacing: -1px;
+            color: #444;
+
+        }
+        .buttoncheck {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
         #waiting {
             text-align: center;
             margin-right: 10%;
@@ -106,17 +127,23 @@
     <div class="loader"></div></div>
 
 
-<div id="win" style="visibility: hidden">
+<div id="win" class="answer" style="visibility: hidden">
     <img src="images/win.png" style="width: 600px;height: 300px">
     <p style="font-size: 100px">VICTORY!</p>
-    <p style="font-size: 50px">you won <span style="color: green">500</span> points</p>
+    <p style="font-size: 50px ; margin-top: 20px">you won <span style="color: green">500</span> points</p>
 </div>
 
-<div id="lost" style="visibility: hidden">
+<div id="lost" class="answer" style="visibility: hidden">
     <img src="images/lost.PNG" style="width: 300px;height: 100px;margin-bottom: 100px">
     <p style="font-size: 100px; color: red">DEFEAT !</p>
-    <p style="font-size: 50px">you lost <span style="color: red">500</span> points</p>
+    <p style="font-size: 50px ; margin-top: 20px">you lost <span style="color: red">500</span> points</p>
 </div>
+
+<div id="answer" style="margin-top: 290px ; text-align: center ; font-size: 25px ; visibility: hidden">
+    <p class="answer">check if your answers are right <span id="checknum" style="color: red"></span></p>
+    <button id="checkwin" class="buttoncheck">check boxes</button>
+</div>
+
 
 
 </body>
